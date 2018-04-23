@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import auth from './routes/auth'
 
 dotenv.config();
+
 const app = express();
 app.use(bodyParser.json());
 
