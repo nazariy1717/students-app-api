@@ -4,7 +4,8 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
-import auth from './routes/auth'
+import adminAuth from './routes/adminAuth'
+// import auth from './routes/auth'
 
 dotenv.config();
 
@@ -14,11 +15,14 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGODB_URL);
 
 
-app.use('/api/auth', auth);
+app.use('/api/admin-auth', adminAuth);
+// app.use('/api/auth', auth);
+
+
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 
-app.listen(8080, () => console.log('Running on localhost'));
+app.listen(8000, () => console.log('Running on localhost'));

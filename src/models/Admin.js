@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 
 const schema = new mongoose.Schema({
-    email: { type: String, required:true, lowercase: true, index: true},
+    login: { type: String, required:true, lowercase: true, index: true},
     passwordHash: { type: String , required: true }
 }, { timestamps: true });
 
@@ -15,16 +15,16 @@ schema.methods.isValidPassword = function isValidPassword(password){
 
 schema.methods.generateJWToken = function generateJWToken(){
     return jwt.sign({
-        email: this.email
+        login: this.login
     }, process.env.JWT_SECRET);
 };
 
 schema.methods.toAuthJson = function toAuthJson() {
     return {
-        email: this.email,
+        login: this.login,
         token: this.generateJWToken()
     }
 };
 
 
-export default mongoose.model('User', schema);
+export default mongoose.model('Admin', schema);
