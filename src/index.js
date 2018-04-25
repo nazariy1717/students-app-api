@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
 import adminAuth from './routes/adminAuth'
+import adminAddGroup from './routes/adminAddGroup'
 // import auth from './routes/auth'
 
 dotenv.config();
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGODB_URL);
 
 
 app.use('/api/admin-auth', adminAuth);
+app.use('/api/addGroup', adminAddGroup);
 // app.use('/api/auth', auth);
 
 
@@ -25,4 +27,4 @@ app.get('/*', (req, res) => {
 });
 
 
-app.listen(8000, () => console.log('Running on localhost'));
+app.listen(8080, () => console.log('Running on localhost'));
