@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 
 import adminAuth from './routes/adminAuth'
 import adminAddGroup from './routes/adminAddGroup'
+import adminGetGroup from './routes/adminGetGroup'
 // import auth from './routes/auth'
 
 dotenv.config();
@@ -18,11 +19,14 @@ mongoose.connect(process.env.MONGODB_URL);
 
 app.use('/api/admin-auth', adminAuth);
 app.use('/api/addGroup', adminAddGroup);
+
 // app.use('/api/auth', auth);
 
 
+app.use('/api/getGroup', adminGetGroup);
 
-app.get('/*', (req, res) => {
+
+app.get('/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
