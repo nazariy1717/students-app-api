@@ -4,9 +4,11 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
-import adminAuth from './routes/adminAuth'
-import adminAddGroup from './routes/adminAddGroup'
-import adminGetGroup from './routes/adminGetGroup'
+import auth from './routes/admin/auth';
+import addGroup from './routes/admin/addGroup';
+import getGroup from './routes/admin/getGroup';
+import removeGroup from './routes/admin/removeGroup';
+
 // import auth from './routes/auth'
 
 dotenv.config();
@@ -16,14 +18,17 @@ app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGODB_URL);
 
+/* admin */
+app.use('/api/admin-auth', auth);
+app.use('/api/addGroup', addGroup);
+app.use('/api/getGroup', getGroup);
+app.use('/api/removeGroup', removeGroup);
 
-app.use('/api/admin-auth', adminAuth);
-app.use('/api/addGroup', adminAddGroup);
 
 // app.use('/api/auth', auth);
 
 
-app.use('/api/getGroup', adminGetGroup);
+
 
 
 app.get('/index.html', (req, res) => {
