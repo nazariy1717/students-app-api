@@ -8,6 +8,7 @@ import auth from './routes/admin/auth';
 import addGroup from './routes/admin/addGroup';
 import getGroup from './routes/admin/getGroup';
 import removeGroup from './routes/admin/removeGroup';
+import addStudent from './routes/admin/addStudent';
 
 // import auth from './routes/auth'
 
@@ -23,6 +24,7 @@ app.use('/api/admin-auth', auth);
 app.use('/api/addGroup', addGroup);
 app.use('/api/getGroup', getGroup);
 app.use('/api/removeGroup', removeGroup);
+app.use('/api/addStudent', addStudent);
 
 
 // app.use('/api/auth', auth);
