@@ -5,6 +5,7 @@ import uniqueValidator  from 'mongoose-unique-validator';
 
 const schema = new mongoose.Schema({
     login: { type: String, required:true, lowercase: true, index: true, unique: true},
+    password: { type: String , required: true },
     passwordHash: { type: String , required: true },
     name: { type: String , required: true},
     groupId: { type: String , required: true }

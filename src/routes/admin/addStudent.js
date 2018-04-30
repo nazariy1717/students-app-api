@@ -9,6 +9,7 @@ router.post('/', (req,res) => {
     const data = req.body.student;
     const student = new Student();
     student.login = data.login;
+    student.password = data.password;
     student.setPassword(data.password);
     student.name = data.name;
     student.groupId = data.groupId;

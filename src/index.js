@@ -9,8 +9,12 @@ import addGroup from './routes/admin/addGroup';
 import getGroup from './routes/admin/getGroup';
 import removeGroup from './routes/admin/removeGroup';
 import addStudent from './routes/admin/addStudent';
+import getStudents from './routes/admin/getStudents';
+import removeStudent from './routes/admin/removeStudent';
 
 // import auth from './routes/auth'
+
+
 
 dotenv.config();
 
@@ -25,10 +29,11 @@ app.use('/api/addGroup', addGroup);
 app.use('/api/getGroup', getGroup);
 app.use('/api/removeGroup', removeGroup);
 app.use('/api/addStudent', addStudent);
+app.use('/api/getStudents', getStudents);
+app.use('/api/removeStudent', removeStudent);
 
 
 // app.use('/api/auth', auth);
-
 
 
 
