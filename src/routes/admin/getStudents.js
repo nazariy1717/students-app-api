@@ -10,7 +10,6 @@ router.get('/', (req,res) => {
             {
                 login: student.login,
                 password: student.password,
-                passwordHash: student.passwordHash,
                 name: student.name,
                 groupId: student.groupId,
             }
