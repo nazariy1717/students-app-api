@@ -6,17 +6,17 @@ import dotenv from 'dotenv';
 
 import auth from './routes/admin/auth';
 
-import addGroup from './routes/admin/addGroup';
-import getGroup from './routes/admin/getGroup';
-import removeGroup from './routes/admin/removeGroup';
+import addGroup from './routes/admin/Group/addGroup';
+import getGroup from './routes/admin/Group/getGroup';
+import removeGroup from './routes/admin/Group/removeGroup';
 
-import addStudent from './routes/admin/addStudent';
-import getStudents from './routes/admin/getStudents';
-import removeStudent from './routes/admin/removeStudent';
+import addStudent from './routes/admin/Student/addStudent';
+import getStudents from './routes/admin/Student/getStudents';
+import removeStudent from './routes/admin/Student/removeStudent';
 
-import addTeacher from './routes/admin/addTeacher';
-import getTeachers from './routes/admin/getTeachers';
-import removeTeacher from './routes/admin/removeTeacher';
+import addTeacher from './routes/admin/Teacher/addTeacher';
+import getTeachers from './routes/admin/Teacher/getTeachers';
+import removeTeacher from './routes/admin/Teacher/removeTeacher';
 
 
 // import auth from './routes/auth'

@@ -1,6 +1,6 @@
 import express from 'express';
-import Student from '../../models/Student'
-import parseErrors from '../../utils/parseErrors'
+import Student from '../../../models/Student'
+import parseErrors from '../../../utils/parseErrors'
 
 const router = express.Router();
 
