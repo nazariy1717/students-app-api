@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import uniqueValidator  from 'mongoose-unique-validator';
+import jwt from 'jsonwebtoken';
 
 
 const schema = new mongoose.Schema({
@@ -12,10 +13,27 @@ const schema = new mongoose.Schema({
 }, { timestamps: true });
 
 
+schema.methods.isValidPassword = function isValidPassword(password){
+    return bcrypt.compareSync(password, this.passwordHash);
+};
+
 schema.methods.setPassword = function setPassword(password){
     this.passwordHash = bcrypt.hashSync(password, 10);
-
 };
+
+schema.methods.generateJWToken = function generateJWToken(){
+    return jwt.sign({
+        login: this.login
+    }, process.env.JWT_SECRET);
+};
+
+schema.methods.toAuthJson = function toAuthJson() {
+    return {
+        login: this.login,
+        token: this.generateJWToken()
+    }
+};
+
 schema.plugin(uniqueValidator,{message: 'Студент з таким іменем вже існує!'});
 
 export default mongoose.model('Student', schema);
