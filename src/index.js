@@ -18,8 +18,9 @@ import addTeacher from './routes/admin/Teacher/addTeacher';
 import getTeachers from './routes/admin/Teacher/getTeachers';
 import removeTeacher from './routes/admin/Teacher/removeTeacher';
 
-
 import studentAuth from './routes/student/studentAuth';
+
+import teacherAuth from './routes/teacher/teacherAuth';
 
 
 // import auth from './routes/auth'
@@ -54,7 +55,8 @@ app.use('/api/removeTeacher', removeTeacher);
 /* student auth  */
 app.use('/api/student-auth', studentAuth);
 
-
+/* teacher auth  */
+app.use('/api/teacher-auth', teacherAuth);
 
 
 
