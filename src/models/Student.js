@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
     password: { type: String , required: true },
     passwordHash: { type: String , required: true },
     name: { type: String , required: true},
-    groupId: { type: String , required: true }
+    groupName: { type: String , required: true }
 }, { timestamps: true });
 
 

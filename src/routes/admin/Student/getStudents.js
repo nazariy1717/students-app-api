@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
                 login: student.login,
                 password: student.password,
                 name: student.name,
-                groupId: student.groupId,
+                groupName: student.groupName,
             }
         ));
         if(studentsMap.length > 0){

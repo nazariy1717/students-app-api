@@ -12,7 +12,7 @@ router.post('/', (req,res) => {
     student.password = data.password;
     student.setPassword(data.password);
     student.name = data.name;
-    student.groupId = data.groupId;
+    student.groupName = data.groupName;
 
     student.save()
         .then(response => res.status(201).json({ response }))
