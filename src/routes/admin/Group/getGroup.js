@@ -8,6 +8,7 @@ router.get('/', (req,res) => {
     Group.find({}, function(err, groups) {
 
         let groupsMap = groups.map( group =>({ id: group._id, groupName: group.groupName }));
+
         if(groupsMap.length > 0){
             res.json({ groupsMap});
         } else{
