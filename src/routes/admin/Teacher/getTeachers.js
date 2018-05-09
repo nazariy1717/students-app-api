@@ -7,6 +7,7 @@ router.get('/', (req,res) => {
     Teacher.find({}, function(err, groups) {
         let teachersMap = groups.map( teacher =>(
             {
+                id: teacher._id,
                 login: teacher.login,
                 password: teacher.password,
                 name: teacher.name,

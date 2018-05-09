@@ -18,6 +18,10 @@ import addTeacher from './routes/admin/Teacher/addTeacher';
 import getTeachers from './routes/admin/Teacher/getTeachers';
 import removeTeacher from './routes/admin/Teacher/removeTeacher';
 
+import addLesson from './routes/admin/Lesson/addLesson';
+
+
+
 import studentAuth from './routes/student/studentAuth';
 
 import teacherAuth from './routes/teacher/teacherAuth';
@@ -50,6 +54,9 @@ app.use('/api/removeStudent', removeStudent);
 app.use('/api/addTeacher', addTeacher);
 app.use('/api/getTeachers', getTeachers);
 app.use('/api/removeTeacher', removeTeacher);
+
+/* admin lesson  */
+app.use('/api/addLesson', addLesson);
 
 
 /* student auth  */
