@@ -7,7 +7,6 @@ const router = express.Router();
 router.get('/', (req,res) => {
 
 
-
     Lesson.aggregate([
         {
             $lookup:
@@ -29,21 +28,28 @@ router.get('/', (req,res) => {
                 },
 
         },
-    ], function(err, lesson){
+        {
+            $lookup:
+                {
+                    from: "lessondates",
+                    localField: "_id",
+                    foreignField: "lessonId",
+                    as: "dates"
+                },
 
+        },
+    ], function(err, lesson){
 
         let lessonsMap = lesson.map( lesson =>(
             {
                 name: lesson.name,
                 teacher: lesson.teacher[0].name,
                 group: lesson.group[0].groupName,
-                number: lesson.number,
-                day: lesson.day,
+                dates: lesson.dates[0].dates,
 
             }
         ));
 
-        console.log(lessonsMap);
 
         if(lessonsMap.length > 0){
             res.json({ lessonsMap });

@@ -20,6 +20,7 @@ import removeTeacher from './routes/admin/Teacher/removeTeacher';
 
 import addLesson from './routes/admin/Lesson/addLesson';
 import getLesson from './routes/admin/Lesson/getLesson';
+import removeLesson from './routes/admin/Lesson/removeLesson';
 
 
 
@@ -59,7 +60,7 @@ app.use('/api/removeTeacher', removeTeacher);
 /* admin lesson  */
 app.use('/api/addLesson', addLesson);
 app.use('/api/getLesson', getLesson);
-// app.use('/api/removeLesson', removeLesson);
+app.use('/api/removeLesson', removeLesson);
 
 
 /* student auth  */

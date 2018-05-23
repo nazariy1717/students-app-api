@@ -43,7 +43,6 @@ function setLessonsDate(lessonNumber, dayOfWeek){
     }
 
     while( tmp.isBefore(endOfMonth) ){
-        console.log(tmp.format('DD-MM-YYYY hh:mm'));
         arr.push(tmp.format('DD-MM-YYYY hh:mm'));
         tmp.add(7, 'days');
     }
