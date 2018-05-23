@@ -46,7 +46,7 @@ app.use('/api/addGroup', addGroup);
 app.use('/api/getGroup', getGroup);
 app.use('/api/removeGroup', removeGroup);
 
-/* admin student  */
+/* admin student  */ 
 app.use('/api/addStudent', addStudent);
 app.use('/api/getStudents', getStudents);
 app.use('/api/removeStudent', removeStudent);
