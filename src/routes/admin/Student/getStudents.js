@@ -19,11 +19,12 @@ router.get('/', (req,res) => {
     ], function(err, groups){
 
         let studentsMap = groups.map( student =>(
+
             {
                 login: student.login,
                 password: student.password,
                 name: student.name,
-                groupName: student.group[0].groupName,
+                // groupName: student.group[0].groupName,
             }
         ));
 

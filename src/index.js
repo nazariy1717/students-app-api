@@ -36,6 +36,8 @@ import teacherAuth from './routes/teacher/teacherAuth';
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 8080;
+
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGODB_URL);
@@ -47,7 +49,7 @@ app.use('/api/addGroup', addGroup);
 app.use('/api/getGroup', getGroup);
 app.use('/api/removeGroup', removeGroup);
 
-/* admin student  */ 
+/* admin student  */
 app.use('/api/addStudent', addStudent);
 app.use('/api/getStudents', getStudents);
 app.use('/api/removeStudent', removeStudent);
@@ -79,4 +81,4 @@ app.get('/index.html', (req, res) => {
 });
 
 
-app.listen(5001, () => console.log('Running on localhost'));
+app.listen(port, () => console.log('Running on localhost'));
